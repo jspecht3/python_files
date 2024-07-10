@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<geometry>
+  <cell id="31" material="1" name="Fuel0" region="-19 24 -25" universe="1"/>
+  <cell id="32" material="3" name="Clad0" region="19 -18 24 -25" universe="1"/>
+  <cell id="33" material="2" name="Water0" region="18 24 -25 20 -21 22 -23" universe="1"/>
+  <cell id="34" material="1" name="Fuel1" region="-19 25 -26" universe="1"/>
+  <cell id="35" material="3" name="Clad1" region="19 -18 25 -26" universe="1"/>
+  <cell id="36" material="4" name="Water1" region="18 25 -26 20 -21 22 -23" universe="1"/>
+  <cell id="37" material="1" name="Fuel2" region="-19 26 -27" universe="1"/>
+  <cell id="38" material="3" name="Clad2" region="19 -18 26 -27" universe="1"/>
+  <cell id="39" material="5" name="Water2" region="18 26 -27 20 -21 22 -23" universe="1"/>
+  <cell id="40" material="1" name="Fuel3" region="-19 27 -28" universe="1"/>
+  <cell id="41" material="3" name="Clad3" region="19 -18 27 -28" universe="1"/>
+  <cell id="42" material="6" name="Water3" region="18 27 -28 20 -21 22 -23" universe="1"/>
+  <cell id="43" material="1" name="Fuel4" region="-19 28 -29" universe="1"/>
+  <cell id="44" material="3" name="Clad4" region="19 -18 28 -29" universe="1"/>
+  <cell id="45" material="7" name="Water4" region="18 28 -29 20 -21 22 -23" universe="1"/>
+  <cell id="46" material="1" name="Fuel5" region="-19 29 -30" universe="1"/>
+  <cell id="47" material="3" name="Clad5" region="19 -18 29 -30" universe="1"/>
+  <cell id="48" material="8" name="Water5" region="18 29 -30 20 -21 22 -23" universe="1"/>
+  <cell id="49" material="1" name="Fuel6" region="-19 30 -31" universe="1"/>
+  <cell id="50" material="3" name="Clad6" region="19 -18 30 -31" universe="1"/>
+  <cell id="51" material="9" name="Water6" region="18 30 -31 20 -21 22 -23" universe="1"/>
+  <cell id="52" material="1" name="Fuel7" region="-19 31 -32" universe="1"/>
+  <cell id="53" material="3" name="Clad7" region="19 -18 31 -32" universe="1"/>
+  <cell id="54" material="10" name="Water7" region="18 31 -32 20 -21 22 -23" universe="1"/>
+  <cell id="55" material="1" name="Fuel8" region="-19 32 -33" universe="1"/>
+  <cell id="56" material="3" name="Clad8" region="19 -18 32 -33" universe="1"/>
+  <cell id="57" material="11" name="Water8" region="18 32 -33 20 -21 22 -23" universe="1"/>
+  <cell id="58" material="1" name="Fuel9" region="-19 33 -34" universe="1"/>
+  <cell id="59" material="3" name="Clad9" region="19 -18 33 -34" universe="1"/>
+  <cell id="60" material="12" name="Water9" region="18 33 -34 20 -21 22 -23" universe="1"/>
+  <surface coeffs="0.0 0.0 0.485" id="18" type="z-cylinder"/>
+  <surface coeffs="0.0 0.0 0.4125" id="19" type="z-cylinder"/>
+  <surface boundary="reflective" coeffs="-0.64" id="20" name="minimum x" type="x-plane"/>
+  <surface boundary="reflective" coeffs="0.64" id="21" name="maximum x" type="x-plane"/>
+  <surface boundary="reflective" coeffs="-0.64" id="22" name="minimum y" type="y-plane"/>
+  <surface boundary="reflective" coeffs="0.64" id="23" name="maximum y" type="y-plane"/>
+  <surface boundary="vacuum" coeffs="0.0" id="24" type="z-plane"/>
+  <surface coeffs="38.1" id="25" type="z-plane"/>
+  <surface coeffs="76.2" id="26" type="z-plane"/>
+  <surface coeffs="114.30000000000001" id="27" type="z-plane"/>
+  <surface coeffs="152.4" id="28" type="z-plane"/>
+  <surface coeffs="190.5" id="29" type="z-plane"/>
+  <surface coeffs="228.60000000000002" id="30" type="z-plane"/>
+  <surface coeffs="266.7" id="31" type="z-plane"/>
+  <surface coeffs="304.8" id="32" type="z-plane"/>
+  <surface coeffs="342.90000000000003" id="33" type="z-plane"/>
+  <surface boundary="vacuum" coeffs="381.0" id="34" type="z-plane"/>
+</geometry>

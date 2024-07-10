@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tallies>
+  <mesh id="1">
+    <dimension>1000 1000</dimension>
+    <lower_left>-18.56354320525404 -18.56354320525404</lower_left>
+    <upper_right>18.56354320525404 18.56354320525404</upper_right>
+  </mesh>
+  <filter id="1" type="mesh">
+    <bins>1</bins>
+  </filter>
+  <tally id="1">
+    <filters>1</filters>
+    <scores>kappa-fission</scores>
+  </tally>
+  <tally id="2">
+    <filters>1</filters>
+    <scores>flux</scores>
+  </tally>
+</tallies>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materials>
+  <material depletable="true" id="1">
+    <density units="g/cm3" value="14.3"/>
+    <nuclide ao="0.996337" name="N14"/>
+    <nuclide ao="0.003663" name="N15"/>
+    <nuclide ao="0.1605" name="U235"/>
+    <nuclide ao="0.8395" name="U238"/>
+  </material>
+  <material id="2">
+    <density units="g/cm3" value="4.3"/>
+    <nuclide ao="1.0" name="Y89"/>
+    <nuclide ao="1.99968852" name="H1"/>
+    <nuclide ao="0.00031148" name="H2"/>
+  </material>
+  <material id="3">
+    <density units="g/cm3" value="7.9"/>
+    <nuclide name="Fe54" wo="3.7204228687638183"/>
+    <nuclide name="Fe56" wo="60.56310746573166"/>
+    <nuclide name="Fe57" wo="1.4236829164115856"/>
+    <nuclide name="Fe58" wo="0.1927867490929428"/>
+    <nuclide name="Cr50" wo="0.7095267258621132"/>
+    <nuclide name="Cr52" wo="14.228891599728803"/>
+    <nuclide name="Cr53" wo="1.6445097591747813"/>
+    <nuclide name="Cr54" wo="0.4170719152343044"/>
+    <nuclide name="Ni58" wo="8.070444406120446"/>
+    <nuclide name="Ni60" wo="3.21579314419747"/>
+    <nuclide name="Ni61" wo="0.1421214261441349"/>
+    <nuclide name="Ni62" wo="0.46056215864880906"/>
+    <nuclide name="Ni64" wo="0.12107886488914005"/>
+    <nuclide name="Mo92" wo="0.28063782760789097"/>
+    <nuclide name="Mo94" wo="0.17982636761260057"/>
+    <nuclide name="Mo95" wo="0.31400928778060966"/>
+    <nuclide name="Mo96" wo="0.333306727027212"/>
+    <nuclide name="Mo97" wo="0.1935519101506087"/>
+    <nuclide name="Mo98" wo="0.495747447126948"/>
+    <nuclide name="Mo100" wo="0.20292043269413013"/>
+    <nuclide name="Mn55" wo="2.0"/>
+    <nuclide name="Si28" wo="0.9187351728283676"/>
+    <nuclide name="Si29" wo="0.04831750292786396"/>
+    <nuclide name="Si30" wo="0.03294732424376842"/>
+    <nuclide name="P31" wo="0.04"/>
+    <nuclide name="S32" wo="0.028430583242482755"/>
+    <nuclide name="S33" wo="0.0002309645813262106"/>
+    <nuclide name="S34" wo="0.0013335457202628069"/>
+    <nuclide name="S36" wo="4.90645592822611e-06"/>
+    <nuclide name="C0" wo="0.02"/>
+  </material>
+  <material id="4">
+    <density units="g/cm3" value="8.92"/>
+    <nuclide ao="0.6915" name="Cu63"/>
+    <nuclide ao="0.3085" name="Cu65"/>
+  </material>
+</materials>

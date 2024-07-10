@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<model>
+  <materials>
+    <material id="7">
+      <density units="g/cm3" value="6.5"/>
+      <nuclide ao="0.5145" name="Zr90"/>
+      <nuclide ao="0.1122" name="Zr91"/>
+      <nuclide ao="0.1715" name="Zr92"/>
+      <nuclide ao="0.1738" name="Zr94"/>
+      <nuclide ao="0.028" name="Zr96"/>
+    </material>
+    <material depletable="true" id="8">
+      <density units="g/cm3" value="10.0"/>
+      <nuclide ao="1.999242" name="O16"/>
+      <nuclide ao="0.000758" name="O17"/>
+      <nuclide ao="0.0003166930253944235" name="U234"/>
+      <nuclide ao="0.03543164439454172" name="U235"/>
+      <nuclide ao="0.964089368630351" name="U238"/>
+      <nuclide ao="0.00016229394971280895" name="U236"/>
+    </material>
+    <material id="9">
+      <density units="g/cm3" value="1.0"/>
+      <nuclide ao="1.99968852" name="H1"/>
+      <nuclide ao="0.00031148" name="H2"/>
+      <nuclide ao="0.999621" name="O16"/>
+      <nuclide ao="0.000379" name="O17"/>
+      <sab name="c_H_in_H2O"/>
+    </material>
+  </materials>
+  <geometry>
+    <cell id="9" material="8" region="-19 23 -22" universe="3"/>
+    <cell id="10" material="void" region="-20 19 23 -22" universe="3"/>
+    <cell id="11" material="7" region="-21 20 23 -22" universe="3"/>
+    <cell id="12" material="9" region="24 -25 26 -27 21 23 -22" universe="3"/>
+    <surface coeffs="0.0 0.0 0.46955" id="19" type="z-cylinder"/>
+    <surface coeffs="0.0 0.0 0.4791" id="20" type="z-cylinder"/>
+    <surface coeffs="0.0 0.0 0.5464" id="21" type="z-cylinder"/>
+    <surface boundary="vacuum" coeffs="150" id="22" type="z-plane"/>
+    <surface boundary="vacuum" coeffs="-150" id="23" type="z-plane"/>
+    <surface boundary="reflective" coeffs="-0.72135" id="24" type="x-plane"/>
+    <surface boundary="reflective" coeffs="0.72135" id="25" type="x-plane"/>
+    <surface boundary="reflective" coeffs="-0.72135" id="26" type="y-plane"/>
+    <surface boundary="reflective" coeffs="0.72135" id="27" type="y-plane"/>
+  </geometry>
+  <settings>
+    <run_mode>eigenvalue</run_mode>
+    <particles>1000</particles>
+    <batches>400</batches>
+    <inactive>200</inactive>
+    <source particle="neutron" strength="1.0" type="independent">
+      <space type="fission">
+        <parameters>-0.72135 -0.72135 0 0.72135 0.72135 300</parameters>
+      </space>
+    </source>
+  </settings>
+  <tallies>
+    <filter id="4" type="cell">
+      <bins>9</bins>
+    </filter>
+    <filter id="3" type="zernike">
+      <order>15</order>
+      <x>0</x>
+      <y>0</y>
+      <r>0.46955</r>
+    </filter>
+    <tally id="3">
+      <filters>4 3</filters>
+      <scores>kappa-fission</scores>
+    </tally>
+  </tallies>
+</model>

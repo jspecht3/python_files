@@ -42,7 +42,7 @@ def r_mn(n,m,rho):
     stop = int((n-abs(m))/2)
     toRet = 0
     for k in range(stop+1):
-        top = (-1)**k * fact(n-k) * rho**(n-2*k)
+        top = (-1)**k * fact(int(n-k)) * rho**(n-2*k)
         bot = fact(k) * fact(int((n+abs(m))/2 - k)) * fact(int((n-abs(m))/2 - k))
         toRet += top/bot
     return toRet
@@ -97,7 +97,7 @@ def gen_polar_differntials(r,theta):
     return dr,dtheta
 
 
-# general plotting
+# plotting
 def plotter(x,y,z,title='',save_fig=False,save_path='',cbar_lim=True):
     fig,ax = plt.subplots()
     ax.set_title(title)
@@ -107,6 +107,30 @@ def plotter(x,y,z,title='',save_fig=False,save_path='',cbar_lim=True):
     if cbar_lim == True: plot.set_clim(-300,180)
 
     if save_fig == True: plt.savefig(save_path)
+    plt.show()
+
+def plot_twinx(data1,data2,title,xlabel,ylabel1,ylabel2,go_log_mode=False,save_fig=False,save_path=''):
+    fig,ax1 = plt.subplots()
+
+    ax1.set_title(title)
+    ax1.set_xlabel(xlabel)
+    
+    ax1.set_ylabel(ylabel1, color='r')
+    ax1.plot(data1, color='r')
+    ax1.tick_params(axis='y', labelcolor='r')
+    
+    ax2 = ax1.twinx()
+    ax2.set_ylabel(ylabel2, color='b')
+    ax2.plot(data2, color='b')
+    ax2.tick_params(axis='y', labelcolor='b')
+
+    if go_log_mode == True:
+        ax1.set_yscale('log')
+        ax2.set_yscale('log')
+
+    if save_fig == True:
+        plt.savefig(save_path, dpi=600)
+
     plt.show()
 
 def polygon_area(p,R0): return p * R0**2 * cos(pi/p)**2 * tan(pi/p)

@@ -64,6 +64,7 @@ def test_num_k1n1():
     integrated_k = num_knm(1,-1)
     assert round(integrated_k) == 0
 
+### Integrating K numerically and analytically
 ''' Comment this out to remove numerical integration checks
 # checking numerical integrated k_nm values
 SSk_arr = []
@@ -87,21 +88,38 @@ with open('numerical_k_integration.txt', 'w') as file:
 
 ''' Comment this out to remove analytical integration checks
 # checking the analytical integrated k_nm values
-SSk_arr = []
 
 for n in range(51):
     for m in np.arange(-n,n+1,2):
-        row = []
-        row.append(n)
-        row.append(m)
-
         integrated_k = ana_knm(n,m)
-        row.append(integrated_k)
-
-        SSk_arr.append(row)
         print("n:",n, " m:",m, " integral:", integrated_k)
 
-with open("analytical_k_integration.txt", 'w') as file:
-    writer = csv.writer(file)
-    writer.writerows(SSk_arr)
+        b = str(n) + ',' + str(m) + ',' + str(integrated_k) + '\n'
+
+        f = open('analytical_k_integration.txt', 'a')
+        f.write(b)
+        f.close()
 '''
+
+### checking ck values
+def test_ck_constant_f():
+    ck = ck_nm(0,0,lambda x,y : 1)
+    
+    assert round(ck) == 1
+
+#''' Comment this out to remove calculation of ck both numerically and analytically
+rho,phi = gen_rhophi(2000)
+r,theta = gen_rtheta(rho,phi,p,R0)
+
+for n in range(51):
+    for m in np.arange(-n,n+1,2):
+        ana_ck = ck_nm(n,m)
+        num_ck = ck(n,m,r,theta,p,R0)
+        print("n:",n, " m:",m, "| ana:",ana_ck, " num:",num_ck)
+
+        row = str(n) + ',' + str(m) + ',' + str(ana_ck) + ',' + str(num_ck) + '\n'
+        
+        f = open("ck_num_vs_ana.txt", 'a')
+        f.write(row)
+        f.close()
+#'''

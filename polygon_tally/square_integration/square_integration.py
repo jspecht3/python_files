@@ -26,7 +26,7 @@ plt.plot(phi, y_r, label='R')
 [plt.axvline(drop, color='k', ls=(0,(5,3)), lw=1) for drop in (pi*np.array([1/4,3/4,5/4,7/4]))]
 plt.legend()
 plt.title("Plot of U_alpha and R_alpha")
-if SAVE_FIGS: plt.savefig('ur_alpha')
+if SAVE_FIGS: plt.savefig('images/ur_alpha')
 '''
 
 ### End U_alpha and R_alpha
@@ -63,8 +63,21 @@ def k_nm(x,y,n,m):
     
     R_alpha = new_r_alpha(theta)
     rho = r / R_alpha
-
-    N = n_nm(n,m)
-    R = r_nm(rho, n, m)
-    
+ 
     return ana_zernike(rho,theta,n,m)
+
+def ck_nm(n,m,f=base_input):
+    def _toIntegrate(x,y,n,m):
+        K = k_nm(x,y,n,m)
+        F = f(x,y)
+
+        theta = np.arctan2(y,x) + (2*pi * (y < 0))
+        R = new_r_alpha(theta)
+
+        dmu = 1 / pi / R**2
+
+        return K * F * dmu
+
+    ck = nquad(_toIntegrate, [[-side_length,side_length],[-side_length,side_length]],args=(n,m))[0]
+    
+    return ck
